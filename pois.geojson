@@ -1,11 +1,29 @@
-var poi =
 {
-  "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [-75.6714892, 39.8685275]
-  },
-  "properties": {
-    "name": "Chester County's Brandywine Valley Tourism Information"
-  }
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chester County's Brandywine Valley Tourism Information"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.67152410745621,
+          39.86862930374782
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.67187547683716,
+          39.86890516081786
+        ]
+      }
+    }
+  ]
 }
