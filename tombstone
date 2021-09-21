@@ -1,0 +1,89 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Eusebius Barnard",
+        "Description": "Founding member of the Longwood Meeting. Minister in the Society of Friends (Quakers), abolitionist, reformer and Underground Railroad agent. Speaker at temperance and abolitionist meetings."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.67203842103481,
+          39.86897206628339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Isaac and Dinah Mendenhall ",
+        "Description": "Husband and wife. Both John and Hannah were founding members of the Longwood Meeting. Stationmasters of the Underground Railroad. Both active in abolitionist organizations. "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.67189626395702,
+          39.868784730815506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bayard Taylor ",
+        "Description": "Born in Kennett Square. Bayard Taylor was an American poet, literary critic, translator, travel author, and diplomat.  Major American, literary figure in the 19th Century. "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6723690032959,
+          39.868642684899946
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "John and Hannah Peirce Cox ",
+        "Description": "Husband and wife farmers. Hannah was a descendant of the Peirce family that built house that would eventually be purchased by Pierre du Pont at the center of Longwood Gardens.  Both John and Hannah were founding members of the Longwood Meeting. Inspired to join and be very active in 19th Century reform efforts including abolition, temperance, women’s rights, and prison reform. Stationmasters on the Underground Railroad (their farm was called Longwood immediately to the southwest of the Longwood Cemetery).  Original plot of few acres of the Longwood Farm was sold to create Longwood Cemetery."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.67194052040577,
+          39.86861798123243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Oliver Johnson ",
+        "Description": "Editor and writer for major antislavery newspapers in America. He was also involved in numerous progressive movements of the time - women's rights, labor, prison reform, immigration, religion and politics. "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.67211151123047,
+          39.86864577285777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "John and Hannah Peirce Cox ",
+        "Description": "Husband and wife farmers. Hannah was a descendant of the Peirce family that built house that would eventually be purchased by Pierre du Pont at the center of Longwood Gardens.  Both John and Hannah were founding members of the Longwood Meeting. Inspired to join and be very active in 19th Century reform efforts including abolition, temperance, women’s rights, and prison reform. Stationmasters on the Underground Railroad (their farm was called Longwood immediately to the southwest of the Longwood Cemetery).  Original plot of few acres of the Longwood Farm was sold to create Longwood Cemetery."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6719485670328,
+          39.8685876162956
+        ]
+      }
+    }
+  ]
+}
