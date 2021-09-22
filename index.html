@@ -41,6 +41,14 @@ rel="stylesheet"
     font-family: "Times New Roman", Times, serif;
     padding-bottom: 2px;
   }
+  h4 {
+    font-size: 12px;
+    font-family: "Times New Roman", Times, serif;
+    padding-bottom: 2px;
+  }
+  h5 {
+    font-family: "Times New Roman", Times, serif;
+  }
 
   #instructions {
 
@@ -89,7 +97,7 @@ const feature = features[0];
 const popup = new mapboxgl.Popup({ offset: [0, -15] })
 .setLngLat(feature.geometry.coordinates)
 .setHTML(
-`<h3>${feature.properties.Name}</h3><p>${feature.properties.Description}</p>`
+`<h4>${feature.properties.Name}</h4><p>${feature.properties.Description}</p>`
 )
 .addTo(map);
 
