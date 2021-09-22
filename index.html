@@ -2,79 +2,157 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <title>Mapping Water Points</title>
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet'/>
-  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
-  <style>
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  h1 {
-    font-size: 28px;
-    color: #577489;
-  }
-  h2 {
-    font-size: 18px;
-    color: #666666;
-  }
-  h4 {
-    font-size: 10px;
-    font-style: italic;
-    color: #a1a1a1;
-  }
-  p {
-    font-size: 14px;
-  }
+  <title>Studio Week 3</title>
+  <!-- Add Mapbox GL JS JavaScript file -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+  <!-- Add in the Mapbox GL JS CSS file -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script>
+  <link href="https://api.mapbox.com/mapbox-assembly/v1.2.1/assembly.min.css" rel="stylesheet">
+  <script async defer src="https://api.mapbox.com/mapbox-assembly/v1.2.1/assembly.js"></script>
+
+  <!-- Add CSS styling info for the map -->
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
     #map {
       position: absolute;
-      top: 0;
+      top: 80px;
       bottom: 0;
       width: 100%;
     }
+
   </style>
+  <!-- Adding styling info for page layout by reading in a CSS file -->
+  <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
-  <div id="map"></div>
+<h1>Longwood Cemetery </h1>
+<!-- Add multiple pages to web page-->
+<!-- active class displays the grey box around current page-->
+<br>
 
-  <script>
+<!-- Add a div to give the map somewhere to go -->
+<div id='map'></div>
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoianVnYWxlIiwiYSI6ImNrbGgxcHhocTIwYmoycG8zaWZyNWdxZGcifQ.-fq6WKH7k2YnRhF9lxn3Fg';
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/jugale/ckod7db2q2huo17ryhhw3vgmg', // imagery basemap - you may choose something else
-      center: [ -75.672795, 39.867687], // starting position at Zaatari Camp
-      zoom: 17, // starting zoom
-    });
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoianVnYWxlIiwiYSI6ImNrbGgxcHhocTIwYmoycG8zaWZyNWdxZGcifQ.-fq6WKH7k2YnRhF9lxn3Fg';
+  var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/jugale/ckod7db2q2huo17ryhhw3vgmg', // stylesheet location
+    center: [-75.672795, 39.867687], // starting position
+    zoom: 17 // starting zoom
+  });
+  var tombstones = {
+  type: 'FeatureCollection',
+  features: [
+    { type: 'Feature', properties: { Name: 'Eusebius Barnard', Description: 'Founding member of the Longwood Meeting. Minister in the Society of Friends (Quakers), abolitionist, reformer and Underground Railroad agent. Speaker at temperance and abolitionist meetings.' }, geometry: { type: 'Point', coordinates: [-75.67203842103481,39.86897206628339] } },
+    { type: 'Feature', properties: { Name: 'Isaac and Dinah Mendenhall', Description: 'Husband and wife. Both John and Hannah were founding members of the Longwood Meeting. Stationmasters of the Underground Railroad. Both active in abolitionist organizations.' }, geometry: { type: 'Point', coordinates: [-75.67189626395702, 39.868784730815506] } },
+    { type: 'Feature', properties: { Name: 'Bayard Taylor', Description: 'Born in Kennett Square. Bayard Taylor was an American poet, literary critic, translator, travel author, and diplomat.  Major American, literary figure in the 19th Century.' }, geometry: { type: 'Point', coordinates: [-75.6723690032959, 39.868642684899946] } },
+    { type: 'Feature', properties: { Name: 'John and Hannah Peirce Cox', Description: 'Husband and wife farmers. Hannah was a descendant of the Peirce family that built house that would eventually be purchased by Pierre du Pont at the center of Longwood Gardens.  Both John and Hannah were founding members of the Longwood Meeting. Inspired to join and be very active in 19th Century reform efforts including abolition, temperance, women’s rights, and prison reform. Stationmasters on the Underground Railroad (their farm was called Longwood immediately to the southwest of the Longwood Cemetery).  Original plot of few acres of the Longwood Farm was sold to create Longwood Cemetery.' }, geometry: { type: 'Point', coordinates: [ -75.67194052040577, 39.86861798123243] } },
+    { type: 'Feature', properties: { Name: 'Oliver Johnson', Description: 'Editor and writer for major antislavery newspapers in America. He was also involved in numerous progressive movements of the time - womens rights, labor, prison reform, immigration, religion and politics.' }, geometry: { type: 'Point', coordinates: [ -75.67211151123047,  39.86864577285777] } },
+    { type: 'Feature', properties: { Name: 'John and Hannah Peirce Cox', Description: 'Husband and wife farmers. Hannah was a descendant of the Peirce family that built house that would eventually be purchased by Pierre du Pont at the center of Longwood Gardens.  Both John and Hannah were founding members of the Longwood Meeting. Inspired to join and be very active in 19th Century reform efforts including abolition, temperance, women’s rights, and prison reform. Stationmasters on the Underground Railroad (their farm was called Longwood immediately to the southwest of the Longwood Cemetery).  Original plot of few acres of the Longwood Farm was sold to create Longwood Cemetery.' }, geometry: { type: 'Point', coordinates: [ -75.6719485670328, 39.8685876162956] } },
+  ]
+  };
+  var houses = {
+    type: 'FeatureCollection',
+    features: [
+      { type: 'Feature', properties: { Name: 'Longwood Meeting House', Address: '300 Greenwood Rd', Description: 'Built in 1854-55 for the Progressive Friends of Pennsylvania Annual Meeting. Found as reform-focused Quaker meeting, especially abolition, women’s rights, and temperance.  Disbanded in 1940. Property purchased by Pierre du Pont.' }, geometry: { type: 'Point', coordinates: [-75.67126393318176,  39.86869929743777] } },
+      { type: 'Feature', properties: { Name: 'Sexton Househ', Address: '945 E Baltimore Pike', Description:'Original builder unknown. Farm house for the Jacob P. Cox family and then sold to the Longwood Cemetery for the use of the Sexton, or groundskeeper. In continuous use by the cemetery until acquisition by Longwood Gardens in 2018.' }, geometry: { type: 'Point', coordinates: [-75.67179501056671, 39.867558803120644] } },
+      { type: 'Feature', properties: { Name: 'Cox House', Address: '921 E Baltimore Pike', Description:'Farmhouse built in late 18th Century. Purchased in 1829 by John Cox. Farm came to be known as Longwood and as a station on the Underground Railroad.' }, geometry: { type: 'Point', coordinates: [-75.67526578903198, 39.865277757605675] } },
+    ]
+  };
 
-   map.on('load', () => {
-   map.addSource('tombstones', {
-   type: 'geojson',
-   // Use a URL for the value for the `data` property.
-   data: 'https://github.com/jagale/LongwoodCemetery/blob/76f999083df553d35adc7ea6e9471f363900689a/tombstones.geojson'
-   });
 
-   map.addLayer({
-   'id': 'tombstone-layer',
-   'type': 'circle',
-   'source': 'tombstones',
-   'paint': {
-   'circle-radius': 8,
-   'circle-stroke-width': 2,
-   'circle-color': 'red',
-   'circle-stroke-color': 'white'
-   }
-   });
-   });
-  </script>
+        map.on('load', function () {
+          map.addLayer({
+            id: 'tombstones',
+            type: 'circle',
+            source: {
+              type: 'geojson',
+              data: tombstones
+            },
+            paint: {
+              'circle-radius': 10,
+              'circle-color': 'red',
+            }
+          });
 
+          map.addLayer({
+            id: 'houses',
+            type: 'symbol',
+            source: {
+              type: 'geojson',
+              data: houses
+            },
+            layout: {
+              'icon-image': 'library-15',
+              'icon-allow-overlap': true
+            },
+            paint: {}
+          });
+        });
+
+        var popup = new mapboxgl.Popup();
+
+        map.on('mousemove', function (e) {
+          var features = map.queryRenderedFeatures(e.point, {
+            layers: ['tombstones', 'houses']
+          });
+          if (!features.length) {
+            popup.remove();
+            return;
+          }
+
+          var feature = features[0];
+
+          popup
+            .setLngLat(feature.geometry.coordinates)
+            .setHTML(feature.properties.Name)
+            .addTo(map);
+
+          map.getCanvas().style.cursor = features.length ? 'pointer' : '';
+        });
+
+        map.on('click', function (e) {
+          var libraryFeatures = map.queryRenderedFeatures(e.point, {
+            layers: ['libraries']
+          });
+          if (!libraryFeatures.length) {
+            return;
+          }
+
+          var libraryFeature = libraryFeatures[0];
+
+          var nearestHospital = turf.nearest(libraryFeature, hospitals);
+
+          if (nearestHospital != null) {
+            map.getSource('nearest-hospital').setData({
+              'type': 'FeatureCollection',
+              'features': [nearestHospital]
+            });
+
+            map.addLayer(
+              {
+                id: 'nearest-hospital',
+                type: 'circle',
+                source: 'nearest-hospital',
+                paint: {
+                  'circle-radius': 12,
+                  'circle-color': '#486DE0'
+                }
+              },
+              'hospitals'
+            );
+          }
+        });
+
+</script>
 </body>
 
 </html>

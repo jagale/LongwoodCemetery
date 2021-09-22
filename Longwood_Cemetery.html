@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Mapping Water Points</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet'/>
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    font-size: 28px;
+    color: #577489;
+  }
+  h2 {
+    font-size: 18px;
+    color: #666666;
+  }
+  h4 {
+    font-size: 10px;
+    font-style: italic;
+    color: #a1a1a1;
+  }
+  p {
+    font-size: 14px;
+  }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="map"></div>
+
+  <script>
+    var url = 'https://raw.githubusercontent.com/jagale/LongwoodCemetery/main/pois.geojson?token=AVGFBO3IKNVTQ76FQS4ZN4DBJB5EC'
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoianVnYWxlIiwiYSI6ImNrbGgxcHhocTIwYmoycG8zaWZyNWdxZGcifQ.-fq6WKH7k2YnRhF9lxn3Fg';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/jugale/ckod7db2q2huo17ryhhw3vgmg', // imagery basemap - you may choose something else
+      center: [ -75.672795, 39.867687], // starting position at Zaatari Camp
+      zoom: 17, // starting zoom
+    });
+
+  </script>
+
+</body>
+
+</html>
