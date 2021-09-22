@@ -17,7 +17,7 @@ rel="stylesheet"
 
   #map {
     position: absolute;
-    top: 80px;
+    top: 0;
     bottom: 0;
     width: 100%;
   }
@@ -26,16 +26,39 @@ rel="stylesheet"
     font-size: 28px;
     color: #00B388;
     font-family: "Times New Roman", Times, serif;
+    padding-bottom: 2px;
 
+  }
+  h2 {
+    font-size: 12px;
+    color: #666666;
+  }
+  #instructions {
+    
+    width: 252px; /* Set the width of the sidebar */
+    position: absolute; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #fff; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding: 5px 20px 5px 20px;
+    border-radius: 10px;
+    font-family: Lato, sans-serif;
   }
 
 </style>
 </head>
 <body>
-  <h1>Longwood Cemetery </h1>
-  <br>
+
 
 <div id="map"></div>
+<div id="instructions">
+  <h1>Longwood Cemetery </h1>
+
+  <h2> <u>Instructions</u></h2>
+ <p>Click and drag the map to move. Zoom in and out by scrolling. You can learn more about each point by clicking on a symbol.<br> <br>  <img src="marker-editor.svg" alt="tombstones" style="width:15px;height:15px;"> Tombstones <br><br> <img src="marker-editor2.svg" alt="pois" style="width:15px;height:15px;"> Buildings</p>
+</div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiamdhbGUtbG9uZ3dvb2RnYXJkZW5zIiwiYSI6ImNrc3QyNDM0dzA0N2kybnMxOHY0Yjh6enQifQ.jpc9XzoNwdCEMhd8uxRgYg';
 const map = new mapboxgl.Map({
